@@ -3,4 +3,4 @@
 - Audran DUC DMITRIEFF CHAUMAT : Bloon
 - Chris SIMON : AyeWai
 - Erwan CHERY : erwanchery
-- Stéphane CHEVALIER : 
+- Stéphane CHEVALIER : Steph-38
