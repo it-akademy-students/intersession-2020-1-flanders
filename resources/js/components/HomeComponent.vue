@@ -7,7 +7,12 @@
             <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
             <button type="submit" class="btn btn-primary mt-2" @click="checkUrl">Scanner</button>
         </div>
-        {{info}}
+        <ul class="list-group">
+            <li class="list-group-item" v-for="i in info" :key="i.id">
+                Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b>
+            </li>
+        </ul>
+        <!-- {{info}} -->
     </div>
 </template>
 
@@ -30,8 +35,12 @@
             console.log(url3);
                 axios.get(`${url3}`)
                     .then(response => {
-                        this.info = response;
-                        // this.info = response.data.map(i => i.name);
+                        this.info = response.data.items;
+                        // this.info = response.data.items.map(i => i.name,
+                        //                                     i => i.path);
+                        axios.get('https://192.168.33.10/getUrl', {
+                            info: response.data.items
+                        })
             });
 
             
