@@ -19,8 +19,8 @@
                 <div class="collapse navbar-collapse" id="navbarColor02">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-						<router-link to="/example" class="nav-link">Example</router-link>
-					</li>
+                      <router-link to="/example" class="nav-link">Example</router-link>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Pricing</a>
                     </li>
@@ -33,7 +33,7 @@
 			<div class="container mt-2">
 				<!-- Composants Vue gérés par VueRouter -->
 				<router-view></router-view>
-			</div>
+      </div>
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>

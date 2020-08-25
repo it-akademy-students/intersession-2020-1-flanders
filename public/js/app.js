@@ -1954,6 +1954,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1971,7 +1976,12 @@ __webpack_require__.r(__webpack_exports__);
       var url3 = "https://api.github.com/search/code?q=.php+in:path+repo:".concat(url2);
       console.log(url3);
       axios.get("".concat(url3)).then(function (response) {
-        _this.info = response; // this.info = response.data.map(i => i.name);
+        _this.info = response.data.items; // this.info = response.data.items.map(i => i.name,
+        //                                     i => i.path);
+
+        axios.get('https://192.168.33.10/getUrl', {
+          info: response.data.items
+        });
       }); // axios.get('https://192.168.33.10/', {
       //     url: this.url
       // })
@@ -37667,7 +37677,20 @@ var render = function() {
         [_vm._v("Scanner")]
       )
     ]),
-    _vm._v("\n    " + _vm._s(_vm.info) + "\n")
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "list-group" },
+      _vm._l(_vm.info, function(i) {
+        return _c("li", { key: i.id, staticClass: "list-group-item" }, [
+          _vm._v("\n            Nom du fichier : "),
+          _c("b", [_vm._v(_vm._s(i.name))]),
+          _vm._v(" Chemin : "),
+          _c("b", [_vm._v(_vm._s(i.path))])
+        ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []
