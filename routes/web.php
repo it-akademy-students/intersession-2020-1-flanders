@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/getUrl', 'UrlController@index');
+
+Route::post('/processFiles', 'ProcessFilesController@index');

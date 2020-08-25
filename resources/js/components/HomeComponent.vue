@@ -12,7 +12,6 @@
                 Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b>
             </li>
         </ul>
-        <!-- {{info}} -->
     </div>
 </template>
 
@@ -29,25 +28,25 @@
     methods: {
         checkUrl() {
             let url = this.url;
-            let url2 = url.slice(19);
-            // let url3 = `https://api.github.com/repos/${url2}`;
+            let tabExtension = url.slice(19).split('.');
+            if(tabExtension[tabExtension.length-1] == "git"){
+                tabExtension = tabExtension.slice(0, -1);
+            }
+            let url2 = tabExtension.join('.');
             let url3 = `https://api.github.com/search/code?q=.php+in:path+repo:${url2}`;
             console.log(url3);
-                axios.get(`${url3}`)
-                    .then(response => {
-                        this.info = response.data.items;
-                        // this.info = response.data.items.map(i => i.name,
-                        //                                     i => i.path);
-                        axios.get('https://192.168.33.10/getUrl', {
-                            info: response.data.items
-                        })
+            axios.get(`${url3}`)
+            .then(response => {
+                this.info = response.data.items;
+                axios.post('/processFiles', 
+                { 
+                    params : this.info
+                }).then(response => {
+                    console.log(response);
+                }).catch(error => {
+                    console.log(error);
+                });
             });
-
-            
-
-            // axios.get('https://192.168.33.10/', {
-            //     url: this.url
-            // })
         }
     },
 

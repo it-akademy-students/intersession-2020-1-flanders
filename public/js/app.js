@@ -1958,7 +1958,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1971,20 +1970,25 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var url = this.url;
-      var url2 = url.slice(19); // let url3 = `https://api.github.com/repos/${url2}`;
+      var tabExtension = url.slice(19).split('.');
 
+      if (tabExtension[tabExtension.length - 1] == "git") {
+        tabExtension = tabExtension.slice(0, -1);
+      }
+
+      var url2 = tabExtension.join('.');
       var url3 = "https://api.github.com/search/code?q=.php+in:path+repo:".concat(url2);
       console.log(url3);
       axios.get("".concat(url3)).then(function (response) {
-        _this.info = response.data.items; // this.info = response.data.items.map(i => i.name,
-        //                                     i => i.path);
-
-        axios.get('https://192.168.33.10/getUrl', {
-          info: response.data.items
+        _this.info = response.data.items;
+        axios.post('/processFiles', {
+          params: _this.info
+        }).then(function (response) {
+          console.log(response);
+        })["catch"](function (error) {
+          console.log(error);
         });
-      }); // axios.get('https://192.168.33.10/', {
-      //     url: this.url
-      // })
+      });
     }
   },
   mounted: function mounted() {
