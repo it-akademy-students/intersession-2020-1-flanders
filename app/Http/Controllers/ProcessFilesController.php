@@ -21,11 +21,26 @@ foreach( $request->params as $key => $file) {
           $explode = explode('/', $repo);
           $realRepo = $explode[1];
           $path = $file['path'];
+
           $client = new \GuzzleHttp\Client();
-          $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'');
-          $response = $return->getBody();
-          $filename =  Storage::disk('public')->put('files/'.$key , $response);
-          // return $return;
+$credentials = base64_encode('gitUser:gitPassword');
+$return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
+        [
+            'headers' => [
+                'Authorization' => 'Basic ' . $credentials,
+            ],
+        ]);
+        $response = json_decode($return->getBody(), true);
+        $name = $response['name'];
+        $content = base64_decode($response['content']);
+        $filename =  Storage::disk('public')->put('files/'.$name , $content);
+
+          // $client = new \GuzzleHttp\Client();
+          // $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'');
+          //
+          // $response = $return->getBody()->getContents();
+          // // $decode = base64_decode($response['content']);
+          // $name = $response['name'];
       }
       return $request->params;
 
