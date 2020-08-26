@@ -1932,6 +1932,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      url: '',
+      info: null
+    };
+  },
+  methods: {
+    checkUrl: function checkUrl() {
+      var _this = this;
+
+      var url = this.url;
+      var tabExtension = url.slice(19).split('.');
+
+      if (tabExtension[tabExtension.length - 1] == "git") {
+        tabExtension = tabExtension.slice(0, -1);
+      }
+
+      var url2 = tabExtension.join('.');
+      var url3 = "https://api.github.com/search/code?q=.php+in:path+repo:".concat(url2);
+      console.log(url3);
+      axios.get("".concat(url3)).then(function (response) {
+        _this.info = response.data.items;
+        axios.post('/processFiles', {
+          params: _this.info
+        }).then(function (response) {
+          console.log(response);
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      });
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+>>>>>>> ae7d1df39732be93eb99503e0db8d10e1917e3a6
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -49878,8 +49947,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/intersession-2020-1-flanders/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/intersession-2020-1-flanders/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\V\Documents\GitHub\intersession-2020-1-flanders\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\V\Documents\GitHub\intersession-2020-1-flanders\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
