@@ -23,8 +23,8 @@ foreach( $request->params as $key => $file) {
           $path = $file['path'];
 
           $client = new \GuzzleHttp\Client();
-$credentials = base64_encode('gitUser:gitPassword');
-$return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
+          $credentials = base64_encode(env('USERNAME').':'.env('USERPASSWORD'));
+          $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
         [
             'headers' => [
                 'Authorization' => 'Basic ' . $credentials,
