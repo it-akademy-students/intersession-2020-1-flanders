@@ -12,10 +12,13 @@ Vue.use(VueRouter);
 
 import Home from './components/HomeComponent.vue';
 import Example from './components/ExampleComponent.vue';
+import Dons from './components/DonsComponent.vue';
+
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/example', component: Example }
+    { path: '/example', component: Example },
+    { path: '/dons', component: Dons }
 ];
 
 const router = new VueRouter({routes});
