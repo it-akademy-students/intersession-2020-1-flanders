@@ -23,7 +23,7 @@ foreach( $request->params as $key => $file) {
           $path = $file['path'];
 
           $client = new \GuzzleHttp\Client();
-$credentials = base64_encode('gitUser:gitPassword');
+$credentials = base64_encode("winterhaze69:".env('GIT_PASS')."");
 $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
         [
             'headers' => [
@@ -35,21 +35,7 @@ $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/co
         $content = base64_decode($response['content']);
         $filename =  Storage::disk('public')->put('files/'.$name , $content);
 
-          // $client = new \GuzzleHttp\Client();
-          // $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'');
-          //
-          // $response = $return->getBody()->getContents();
-          // // $decode = base64_decode($response['content']);
-          // $name = $response['name'];
       }
       return $request->params;
-
-      //
-      // return $request->params;
-      //   foreach( $request->params as $file){
-      //       // $filename =  Storage::disk('public')->put('files/' . $storeFile);
-      //       return $file;
-      //   }
-        // return $request->params;
     }
 }

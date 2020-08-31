@@ -1,0 +1,18 @@
+Parse: A PHP Security Scanner
+
+.........................E.........I...
+
+There was 1 error
+
+1) /var/www/html/laravelSess/intersession-2020-1-flanders/storage/app/public/files/Model.php
+Syntax error, unexpected '?', expecting T_VARIABLE on line 19
+
+There was 1 issue
+
+1) /var/www/html/laravelSess/intersession-2020-1-flanders/storage/app/public/files/utilities.php on line 8
+By default 'extract' overwrites variables in the local scope
+>     extract($variables);
+For more information execute 'psecio-parse rules Extract'
+
+FAILURES!
+Scanned: 39, Errors: 1, Issues: 1.

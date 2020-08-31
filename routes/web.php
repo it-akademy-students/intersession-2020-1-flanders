@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/getUrl', 'UrlController@index');
 
 Route::post('/processFiles', 'ProcessFilesController@index');
+
+Route::get('test-email', 'JobController@enqueue');
