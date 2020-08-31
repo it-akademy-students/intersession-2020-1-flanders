@@ -36,6 +36,7 @@ class ProcessFilesController extends BaseController
     $content = base64_decode($response['content']);
     $filename =  Storage::disk('public')->put('files/'.$name , $content);
 }
+
 return 'Done';
 
       //
