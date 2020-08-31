@@ -11,7 +11,7 @@ class UrlController extends Controller
      */
     public function index(Request $request)
     {
-        $infos = $request
-        w
+        $infos = $request;
+
     }
 }
