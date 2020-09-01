@@ -31,6 +31,6 @@ Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
 
-Route::get('/dons', function () {
-    return view('products/payment');
-});
+// Route::get('/dons', function () {
+//     return view('products/payment');
+// });

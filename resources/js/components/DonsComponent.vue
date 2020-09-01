@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <h1>Laravel 5.8 PayPal Integration Tutorial - ItSolutionStuff.com</h1>
 
         <div class="content">
             <h1>" Le don vient du coeur, non de la fortune." - Proverbe Kurde</h1>

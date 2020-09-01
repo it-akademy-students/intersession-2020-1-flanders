@@ -1937,39 +1937,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-<<<<<<< HEAD
-  methods: {
-    payment: function payment() {
-      var script = document.createElement("script");
-      script.src = "https://www.paypal.com/sdk/js?client-id=AZl98PmngJ6OhBEscuDrauxYIHb-fHqVzxLzn44TL0kehGIuV1sQcWoknatPgPmXgvpdK1eYZa4_CXEY&currency=EUR";
-    }
-  },
-  mounted: function mounted() {
-    paypal.Buttons({
-      style: {
-        shape: 'pill',
-        color: 'blue',
-        layout: 'vertical',
-        label: 'paypal'
-      },
-      createOrder: function createOrder(data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '2.00'
-            }
-          }]
-        });
-      },
-      onApprove: function onApprove(data, actions) {
-        return actions.order.capture().then(function (details) {
-          alert('Transaction completed by ' + details.payer.name.given_name + '!');
-        });
-      }
-    }).render('#paypal-button-container');
-    console.log('Component mounted.');
-=======
   data: function data() {
     return {
       order: {
@@ -2030,7 +2000,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }).render(this.$refs.paypal);
     }
->>>>>>> Chris
   }
 });
 
@@ -39134,21 +39103,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-<<<<<<< HEAD
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [
-      _vm._v("Laravel 5.8 PayPal Integration Tutorial - ItSolutionStuff.com")
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("a", { staticClass: "btn btn-success", on: { click: _vm.payment } }, [
-      _vm._v("Pay $100 from Paypal")
-    ]),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "paypal-button-container" } })
-=======
-  return _c("div", { staticClass: "flex-center position-ref full-height" }, [
     _c("div", { staticClass: "content" }, [
       _c("h1", [
         _vm._v('" Le don vient du coeur, non de la fortune." - Proverbe Kurde')
@@ -39156,7 +39111,6 @@ var render = function() {
       _vm._v(" "),
       _c("div", { ref: "paypal" })
     ])
->>>>>>> Chris
   ])
 }
 var staticRenderFns = []
@@ -54636,8 +54590,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"], vue_plugin_load_script__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-Vue.use(vue_plugin_load_script__WEBPACK_IMPORTED_MODULE_1__["default"]);
-
 
 
 var routes = [{
@@ -54649,12 +54601,7 @@ var routes = [{
 }, {
   path: '/dons',
   component: _components_DonsComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
-<<<<<<< HEAD
-}]; // const router = new VueRouter(routes);
-
-=======
 }];
->>>>>>> Chris
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: routes
@@ -54718,21 +54665,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!***************************************************!*\
   !*** ./resources/js/components/DonsComponent.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DonsComponent_vue_vue_type_template_id_2cfa6f1c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DonsComponent.vue?vue&type=template&id=2cfa6f1c& */ "./resources/js/components/DonsComponent.vue?vue&type=template&id=2cfa6f1c&");
 /* harmony import */ var _DonsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DonsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/DonsComponent.vue?vue&type=script&lang=js&");
-<<<<<<< HEAD
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _DonsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _DonsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-=======
 /* empty/unused harmony star reexport *//* harmony import */ var _DonsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DonsComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/DonsComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
->>>>>>> Chris
 
 
 
@@ -54762,7 +54704,7 @@ component.options.__file = "resources/js/components/DonsComponent.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/DonsComponent.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

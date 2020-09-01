@@ -25,9 +25,6 @@
                 <li class="nav-item">
                     <router-link to="/dons" class="nav-link">Dons</router-link>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/dons') }}">Dons</a>
-                </li>
             </ul>
         </div>
     </nav>

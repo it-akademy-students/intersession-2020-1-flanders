@@ -11,8 +11,6 @@ import VueRouter from 'vue-router';
 import LoadScript from 'vue-plugin-load-script';
 Vue.use(VueRouter, LoadScript);
 
-import LoadScript from 'vue-plugin-load-script';
-Vue.use(LoadScript);
 
 import Home from './components/HomeComponent.vue';
 import Example from './components/ExampleComponent.vue';
