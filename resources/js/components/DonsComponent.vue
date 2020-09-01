@@ -2,11 +2,11 @@
     <div class="container">
         <h1>Laravel 5.8 PayPal Integration Tutorial - ItSolutionStuff.com</h1>
 
-        <table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/in/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/in/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png" border="0" alt="PayPal Logo"></a></td></tr></table>
+        <div class="content">
+            <h1>" Le don vient du coeur, non de la fortune." - Proverbe Kurde</h1>
+            <div ref="paypal"></div>
 
-        <a @click="payment" class="btn btn-success">Pay $100 from Paypal</a>
-
-        <div id="paypal-button-container"></div>
+        </div>
     </div>
 </template>
 
@@ -16,48 +16,60 @@
 
 
     export default {
-
-
-    methods: {
-        payment() {
-            const script = document.createElement("script");
-            script.src ="https://www.paypal.com/sdk/js?client-id=AZl98PmngJ6OhBEscuDrauxYIHb-fHqVzxLzn44TL0kehGIuV1sQcWoknatPgPmXgvpdK1eYZa4_CXEY&currency=EUR";
-
-        }
-    },
-
-
-        mounted() {
-
-
-
-            paypal.Buttons({
-                style: {
-                    shape: 'pill',
-                    color: 'blue',
-                    layout: 'vertical',
-                    label: 'paypal',
-
-                },
-                createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: '2.00'
-                            }
-                        }]
-                    });
-                },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                    });
+        data() {
+            return {
+                order: {
+                    description: "Buy Things",
+                    amount: {
+                        currency_code: "USD",
+                        value: 2
+                    }
                 }
-            }).render('#paypal-button-container');
-
-
-
-            console.log('Component mounted.')
+            };
+        },
+        mounted: function() {
+            const script = document.createElement("script");
+            const ClientID = "AU5YkARBCj65SKZubBH7ldetjPMqHypbUdotgt2MMpQoCfE9YJDRsWfPtEqVbdpQwSh78QYwX8EslaCj";
+            script.src = `https://www.paypal.com/sdk/js?client-id=${ClientID}`;
+            script.addEventListener("load", this.setLoaded);
+            document.body.appendChild(script);
+        },
+        methods: {
+            setLoaded: function() {
+                window.paypal
+                    .Buttons({
+                        createOrder: (data, actions) => {
+                            return actions.order.create({
+                                purchase_units: [this.order]
+                            });
+                        },
+                        onApprove: async (data, actions) => {
+                            const order = await actions.order.capture();
+                            // ajax request
+                        },
+                        onError: err => {
+                            console.log(err);
+                        }
+                    })
+                    .render(this.$refs.paypal);
+            }
         }
-    }
+    };
 </script>
+
+<style>
+    html, body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+    .content {
+        margin-top: 100px;
+        text-align: center;
+    }
+</style>
+
+
