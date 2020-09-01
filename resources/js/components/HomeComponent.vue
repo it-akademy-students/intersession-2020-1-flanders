@@ -46,11 +46,13 @@
             .then(response => {
                 console.log(response);
                 this.info = response.data.items;
-                axios.post('/processFiles', 
-                { 
+                axios.post('/processFiles',
+                {
                     params : this.info
                 }).then(response => {
                     console.log(response);
+                    console.log(response.data[7]);
+                    //console.log('test');
                 }).catch(error => {
                     console.log(error);
                 });
