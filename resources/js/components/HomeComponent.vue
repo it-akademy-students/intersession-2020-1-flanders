@@ -1,20 +1,24 @@
 <template>
     <div>
+
+
         <h1>Composant Home</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
-            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url">
+            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url" required>
             <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
-            <button type="submit" class="btn btn-primary mt-2" @click="checkUrl">Scanner</button>
+            <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
         </div>
-        <table class="table">
+
+
+        <table class="table table-hover">
             <thead class="thead-dark" v-if="info">
                 <tr>
                     <th>Nombre de fichiers : {{info.length}}</th>
                 </tr>
             </thead>
             <tbody v-for="i in info" :key="i.id">
-                <tr>
+                <tr class="bg-primary">
                     <td>Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b></td>
                 </tr>
             </tbody>
