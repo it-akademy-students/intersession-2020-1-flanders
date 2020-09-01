@@ -1,0 +1,23 @@
+Parse: A PHP Security Scanner
+
+..............E.......I.....
+
+There was 1 error
+
+1) /var/www/html/intersession-2020-1-flanders/storage/app/public/files/User.php
+Syntax error, unexpected '?' on line 30
+
+There were 2 issues
+
+1) /var/www/html/intersession-2020-1-flanders/storage/app/public/files/Config.php on line 38
+Avoid hard-coding sensitive values (ex. "username", "password", etc.)
+>     const DB_USER = 'root';
+For more information execute 'psecio-parse rules HardcodedSensitiveValues'
+
+2) /var/www/html/intersession-2020-1-flanders/storage/app/public/files/Config.php on line 44
+Avoid hard-coding sensitive values (ex. "username", "password", etc.)
+>     const DB_PASSWORD = '0000';
+For more information execute 'psecio-parse rules HardcodedSensitiveValues'
+
+FAILURES!
+Scanned: 28, Errors: 1, Issues: 2.

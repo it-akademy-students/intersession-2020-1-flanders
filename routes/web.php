@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/getUrl', 'UrlController@index');
+
+Route::post('/processFiles', 'ProcessFilesController@index');
+Route::get('test-email', 'JobController@processQueue');
