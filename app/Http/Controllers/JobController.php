@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Jobs\SendEmail;
+use App\Jobs\AnalyseCode;
 
 use App\Http\Controllers\Controller;
 
@@ -24,9 +25,10 @@ class JobController extends Controller
 public function enqueue()
 {
 
-    // $emailJob = new SendEmail()->delay(Carbon::now()->addMinutes(1));
-    $emailJob = new SendEmail();
-    dispatch($emailJob)->delay(now()->addMinutes(2));
+  AnalyseCode::withChain([
+    new SendEmail()
+])->dispatch();
+
 }
 
 }

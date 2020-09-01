@@ -8,12 +8,14 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Storage;
+use Symfony\Component\Process\Process;
+
 
 class ProcessFilesController extends BaseController
 {
     public function index(Request $request){
 //https://github.com/it-akademy-students/intersession-2020-1-flanders
-  // $filename =  Storage::disk('public')->put('files/fileTest.php' , 'caca');
+  $filename =  Storage::disk('public')->put('files/fileTest.php' , 'caca');
 
 foreach( $request->params as $key => $file) {
           $owner = $file['repository']['owner']['login'];
@@ -36,6 +38,9 @@ $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/co
         $filename =  Storage::disk('public')->put('files/'.$name , $content);
 
       }
+
+      app('App\Http\Controllers\JobController')->enqueue();
+
       return $request->params;
     }
 }
