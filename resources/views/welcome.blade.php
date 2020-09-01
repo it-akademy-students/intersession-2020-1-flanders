@@ -22,7 +22,7 @@
                       <router-link to="/example" class="nav-link">Example</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
+                    <router-link to="/test" class="nav-link">TEST</router-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">About</a>

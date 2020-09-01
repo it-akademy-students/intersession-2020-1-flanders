@@ -3,6 +3,7 @@
 /public/hot
 /public/storage
 /public/adminer.php
+notes.txt
 /storage/*.key
 /vendor
 .env
