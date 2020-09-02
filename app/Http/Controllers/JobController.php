@@ -2,18 +2,33 @@
 
 namespace App\Http\Controllers;
 
+
 use Carbon\Carbon;
+
 use Illuminate\Http\Request;
-use App\Jobs\SendWelcomeEmail;
+
+use App\Jobs\SendEmail;
+use App\Jobs\AnalyseCode;
+
+use App\Http\Controllers\Controller;
 
 class JobController extends Controller
 {
-    /**
-     * Handle Queue Process
-     */
-    public function processQueue()
-    {
-        $emailJob = new SendWelcomeEmail();
-        dispatch($emailJob)->delay(now()->addMinutes(1));
-    }
+
+/**
+ *
+ *
+ * @param Request $request
+ * @return \Illuminate\Http\RedirectResponse
+ * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+ */
+public function enqueue()
+{
+
+  AnalyseCode::withChain([
+    new SendEmail()
+])->dispatch();
+
+}
+
 }

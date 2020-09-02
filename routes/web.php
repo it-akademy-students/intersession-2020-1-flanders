@@ -21,16 +21,4 @@ Route::get('/getUrl', 'UrlController@index');
 
 Route::post('/processFiles', 'ProcessFilesController@index');
 
-
-/*
- *  Routes pour les paiements PayPal
- */
-
-Route::get('payment', 'PayPalController@payment')->name('payment');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
-
-
-// Route::get('/dons', function () {
-//     return view('products/payment');
-// });
+Route::get('test-email', 'JobController@enqueue');
