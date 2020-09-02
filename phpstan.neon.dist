@@ -3,4 +3,4 @@ parameters:
     paths:
         - storage/app/public/files
     fileExtensions:
-       - php
+        - php
