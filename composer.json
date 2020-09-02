@@ -15,7 +15,11 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
+<<<<<<< HEAD
         "srmklive/paypal": "^1.7"
+=======
+        "symfony/process": "^5.1"
+>>>>>>> Alex
     },
     "require-dev": {
         "facade/ignition": "^2.0",
