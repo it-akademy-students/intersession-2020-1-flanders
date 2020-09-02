@@ -2,7 +2,7 @@
     <div>
 
 
-        <h1>Composant Home</h1>
+        <h1>Analyse des fichiers PHP d'un projet github</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
             <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url" required>

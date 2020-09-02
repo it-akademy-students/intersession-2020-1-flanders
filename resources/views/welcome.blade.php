@@ -12,18 +12,17 @@
 <div id="app">
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <router-link to="/" class="navbar-brand">Check Your PHP</router-link>
-        {{-- <a class="navbar-brand" href="#">Check Your PHP</a> --}}
+        <router-link to="/" class="navbar-brand">Analyse du code PHP</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/example" class="nav-link">Example</router-link>
+                    <router-link to="/GetStarted" class="nav-link">Aide</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/dons" class="nav-link">Dons</router-link>
+                    <router-link to="/Donations" class="nav-link">Faire un don</router-link>
                 </li>
             </ul>
         </div>
