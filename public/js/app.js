@@ -2075,6 +2075,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2101,6 +2103,22 @@ __webpack_require__.r(__webpack_exports__);
         _this.info = response.data.items;
         axios.post('/processFiles', {
           params: _this.info
+        }).then(function (response) {
+          console.log(response);
+          console.log(response.data[7]); //console.log('test');
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      });
+    },
+    test: function test() {
+      var _this2 = this;
+
+      axios.get("".concat(url3)).then(function (response) {
+        console.log(response);
+        _this2.info = response.data.items;
+        axios.post('/processFiles', {
+          params: _this2.info
         }).then(function (response) {
           console.log(response);
           console.log(response.data[7]); //console.log('test');
@@ -39237,6 +39255,8 @@ var render = function() {
         [_vm._v("Scanner")]
       )
     ]),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.test } }, [_vm._v("Test")]),
     _vm._v(" "),
     _c(
       "table",
