@@ -2075,8 +2075,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -39255,8 +39253,6 @@ var render = function() {
         [_vm._v("Scanner")]
       )
     ]),
-    _vm._v(" "),
-    _c("button", { on: { click: _vm.test } }, [_vm._v("Test")]),
     _vm._v(" "),
     _c(
       "table",

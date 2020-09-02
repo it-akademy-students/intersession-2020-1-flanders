@@ -10,8 +10,6 @@
             <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
         </div>
 
-        <button @click="test" >Test</button>
-
 
         <table class="table table-hover">
             <thead class="thead-dark" v-if="info">
