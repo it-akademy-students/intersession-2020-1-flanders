@@ -9,12 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "alekseykorzun/php-audit": "dev-master",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
+<<<<<<< HEAD
         "srmklive/paypal": "^1.7"
+=======
+        "symfony/process": "^5.1"
+>>>>>>> Alex
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -22,6 +27,7 @@
         "guzzlehttp/guzzle": "6.5",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
+        "phpstan/phpstan": "^0.12.40",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
