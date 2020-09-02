@@ -10,6 +10,8 @@
             <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
         </div>
 
+        <button @click="test" >Test</button>
+
 
         <table class="table table-hover">
             <thead class="thead-dark" v-if="info">
@@ -61,7 +63,28 @@
                     console.log(error);
                 });
             });
+        },
+
+
+        test() {
+            axios.get(`${url3}`)
+            .then(response => {
+                console.log(response);
+                this.info = response.data.items;
+                axios.post('/processFiles',
+                {
+                    params : this.info
+                }).then(response => {
+                    console.log(response);
+                    console.log(response.data[7]);
+                    //console.log('test');
+                }).catch(error => {
+                    console.log(error);
+                });
+            });
         }
+
+
     },
 
         mounted() {
