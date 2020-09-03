@@ -2,11 +2,7 @@
     <div>
 
 
-<<<<<<< HEAD
         <h1>Analyse des fichiers PHP d'un projet github</h1>
-=======
-        <h1>Check Your PHP</h1>
->>>>>>> call_github_with_vue
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
             <input type="url" id="inputGitHubUrl" class="form-control" v-model="url" placeholder="Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner" required>
@@ -26,10 +22,6 @@
                 </transition>
         </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> call_github_with_vue
 
         <table class="table table-hover">
             <thead class="thead-dark" v-if="info">

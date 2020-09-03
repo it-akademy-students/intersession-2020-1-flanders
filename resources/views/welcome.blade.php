@@ -12,9 +12,6 @@
 <div id="app">
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<<<<<<< HEAD
-        <router-link to="/" class="navbar-brand">Analyse du code PHP</router-link>
-=======
 
 
     <a class="navbar-brand" href="#">
@@ -23,7 +20,6 @@
 
         <router-link to="/" class="navbar-brand">Check Your PHP</router-link>
         {{-- <a class="navbar-brand" href="#">Check Your PHP</a> --}}
->>>>>>> call_github_with_vue
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
