@@ -29,7 +29,7 @@ class AnalyseCodePhpStan implements ShouldQueue
      */
     public function handle()
     {
-      $analyser2 = shell_exec('cd /var/www/html/laravelSess/intersession-2020-1-flanders && vendor/bin/phpstan analyse > ./storage/app/public/mail/email2.txt');
+      $analyser2 = shell_exec('cd '.base_path().' && vendor/bin/phpstan analyse --memory-limit 40 > storage/app/public/mail/email2.txt');
       return $analyser2;
     }
 }
