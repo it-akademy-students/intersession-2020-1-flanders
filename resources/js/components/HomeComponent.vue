@@ -7,7 +7,7 @@
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
             <input type="url" id="inputGitHubUrl" class="form-control" v-model="url" placeholder="Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner" required>
             <label for="inputMail">Email de retour rapport</label>
-            <input type="mail" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
+            <input type="email" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
 
             <!-- animated button -->
 
