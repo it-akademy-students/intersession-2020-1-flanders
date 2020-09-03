@@ -13,14 +13,25 @@
 
 
             <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
-                <transition name='rotate'>
-                    <img 
-                        :src='image'
-                        v-if='show'
-                        class="m-3"
-                    > 
-                </transition>
+
+            <transition
+                name="custom-classes-transition"
+                enter-active-class="animated tada"
+                leave-active-class="animated bounceOutRight"
+            >
+                <img 
+                v-if='show'
+                    :src='image'
+                    class="m-3"
+                > 
+            </transition>
+
+            
+            <transition name='fade'>
+            </transition>
         </div>
+
+
 
 
         <table class="table table-hover">
@@ -43,11 +54,12 @@
 
     data() {
         return {
-            url: '',
-            mail: '',
+            url: null,
+            mail: null,
             info: null,
             image: '/images/hibou.png',
             show: true,
+
         }
     },
 
@@ -90,3 +102,14 @@
         }
     }
 </script>
+
+<style>
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+</style>

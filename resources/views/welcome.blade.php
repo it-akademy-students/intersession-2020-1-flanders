@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -26,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/GetStarted" class="nav-link">Aide</router-link>
+                    <router-link to="/GetStarted" class="nav-link"><img src="{{ asset('/images/question.svg') }}" width="30" height="30"> Aide</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/Donations" class="nav-link">Faire un don</router-link>
+                    <router-link to="/Donations" class="nav-link"><img src="{{ asset('/images/money.svg') }}" width="30" height="30"> Faire un don</router-link>
                 </li>
             </ul>
         </div>
