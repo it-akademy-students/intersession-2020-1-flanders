@@ -18,7 +18,6 @@
                         :src='image'
                         v-if='show'
                         class="m-3"
-
                     > 
                 </transition>
         </div>
