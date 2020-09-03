@@ -26,7 +26,7 @@ foreach( $request->params as $key => $file) {
           $path = $file['path'];
 
           $client = new \GuzzleHttp\Client();
-          $credentials = base64_encode("winterhaze69:".env('GIT_PASS')."");
+          $credentials = base64_encode("FlandersTeam:FlandersCompagnie");
           $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
         [
             'headers' => [

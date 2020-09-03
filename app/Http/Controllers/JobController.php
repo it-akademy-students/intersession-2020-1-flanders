@@ -28,7 +28,7 @@ class JobController extends Controller
 
     AnalyseCode::withChain([
         new AnalyseCodePhpStan(),
-        new SendEmail($mail)
+        new SendEmail()
     ])->dispatch();
 
     }
