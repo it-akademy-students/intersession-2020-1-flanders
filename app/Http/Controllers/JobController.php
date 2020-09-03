@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Jobs\SendEmail;
 use App\Jobs\AnalyseCode;
+use App\Jobs\AnalyseCodePhpStan;
 
 use App\Http\Controllers\Controller;
 
@@ -26,7 +27,8 @@ class JobController extends Controller
     {
 
     AnalyseCode::withChain([
-        new SendEmail($mail)
+        new AnalyseCodePhpStan(),
+        new SendEmail()
     ])->dispatch();
 
     }

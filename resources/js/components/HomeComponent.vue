@@ -2,12 +2,12 @@
     <div>
 
 
-        <h1>Check Your PHP</h1>
+        <h1>Analyse des fichiers PHP d'un projet github</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
             <input type="url" id="inputGitHubUrl" class="form-control" v-model="url" placeholder="Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner" required>
             <label for="inputMail">Email de retour rapport</label>
-            <input type="mail" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
+            <input type="email" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
 
             <!-- animated button -->
 
@@ -23,7 +23,6 @@
         </div>
 
 
-
         <table class="table table-hover">
             <thead class="thead-dark" v-if="info">
                 <tr>
@@ -31,7 +30,7 @@
                 </tr>
             </thead>
             <tbody v-for="i in info" :key="i.id">
-                <tr class="bg-primary">
+                <tr class="bg-white">
                     <td>Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b></td>
                 </tr>
             </tbody>

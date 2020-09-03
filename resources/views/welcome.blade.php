@@ -26,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/example" class="nav-link">Example</router-link>
+                    <router-link to="/GetStarted" class="nav-link">Aide</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/dons" class="nav-link">Dons</router-link>
+                    <router-link to="/Donations" class="nav-link">Faire un don</router-link>
                 </li>
             </ul>
         </div>

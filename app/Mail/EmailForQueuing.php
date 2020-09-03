@@ -28,6 +28,12 @@ class EmailForQueuing extends Mailable
      */
     public function build()
     {
-      return $this->view('mails.email');
+      // $file = $this->view('mails.email2');
+      // $files = $request->file($test);
+      // $popo = file_get_contents($files);
+      // dd($popo);
+      return $this->view('mails.email')
+      ->attach("".storage_path('/app/public/mail/email2.txt')."")
+      //->attach("".storage_path('/app/public/mail/Attacks.docx')."");
     }
 }
