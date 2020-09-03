@@ -16,21 +16,20 @@ use App\Http\Controllers\Controller;
 class JobController extends Controller
 {
 
-/**
- *
- *
- * @param Request $request
- * @return \Illuminate\Http\RedirectResponse
- * @throws \Symfony\Component\HttpKernel\Exception\HttpException
- */
-public function enqueue()
-{
+    /**
+     *
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     */
+    public function enqueue(Request $request)
+    {
 
-  AnalyseCode::withChain([
-    new AnalyseCodePhpStan(),
-    new SendEmail()
-])->dispatch()->delay(now()->addSeconds(3));
+    AnalyseCode::withChain([
+        new SendEmail($mail)
+    ])->dispatch();
 
-}
+    }
 
 }
