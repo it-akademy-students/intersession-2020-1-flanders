@@ -10,16 +10,11 @@
             <input type="email" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
 
             <!-- animated button -->
-
-
-            <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
-                <transition name='rotate'>
-                    <img 
-                        :src='image'
-                        v-if='show'
-                        class="m-3"
-                    > 
-                </transition>
+            <div class="vld-parent">
+                <loading :active.sync="isLoading"
+                         :is-full-page="false"></loading>
+                <button type="submit" class="btn btn-info mt-2" @click="checkUrl" @click.prevent="doAjax">Scanner</button>
+            </div>
         </div>
 
 
@@ -39,24 +34,26 @@
 </template>
 
 <script>
+    import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
     export default {
 
     data() {
         return {
+            isLoading: false,
             url: '',
             mail: '',
             info: null,
-            image: '/images/hibou.png',
             show: true,
         }
     },
-
+    components: {
+        Loading
+    },
     methods: {
         checkUrl() {
             this.show = false;
-
-
-
             let url = this.url;
             let tabExtension = url.slice(19).split('.');
             if(tabExtension[tabExtension.length-1] == "git"){
@@ -82,6 +79,13 @@
                 });
             });
         },
+        doAjax() {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+                this.isLoading = false
+            },5000)
+        },
 
     },
 
@@ -90,3 +94,10 @@
         }
     }
 </script>
+
+<style>
+    .vld-parent {
+        height: 20vh;
+        margin: 0;
+    }
+</style>
