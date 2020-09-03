@@ -2075,17 +2075,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       url: '',
-      info: null
+      mail: '',
+      info: null,
+      image: '/images/hibou.png',
+      show: true
     };
   },
   methods: {
     checkUrl: function checkUrl() {
       var _this = this;
 
+      this.show = false;
       var url = this.url;
       var tabExtension = url.slice(19).split('.');
 
@@ -2100,7 +2118,8 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response);
         _this.info = response.data.items;
         axios.post('/processFiles', {
-          params: _this.info
+          params: _this.info,
+          mail: _this.mail
         }).then(function (response) {
           console.log(response);
           console.log(response.data[7]); //console.log('test');
@@ -39199,60 +39218,97 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+<<<<<<< HEAD
     _c("h1", [_vm._v("Analyse des fichiers PHP d'un projet github")]),
+=======
+    _c("h1", [_vm._v("Check Your PHP")]),
+>>>>>>> call_github_with_vue
     _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "inputGitHubUrl" } }, [
-        _vm._v("Lien du repo GitHub")
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.url,
-            expression: "url"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: {
-          type: "url",
-          id: "inputGitHubUrl",
-          "aria-describedby": "HelpBlock",
-          required: ""
-        },
-        domProps: { value: _vm.url },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "inputGitHubUrl" } }, [
+          _vm._v("Lien du repo GitHub")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.url,
+              expression: "url"
             }
-            _vm.url = $event.target.value
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "url",
+            id: "inputGitHubUrl",
+            placeholder:
+              "Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner",
+            required: ""
+          },
+          domProps: { value: _vm.url },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.url = $event.target.value
+            }
           }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "small",
-        { staticClass: "form-text text-muted", attrs: { id: "HelpBlock" } },
-        [
-          _vm._v(
-            "Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner"
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-info mt-2",
-          attrs: { type: "submit" },
-          on: { click: _vm.checkUrl }
-        },
-        [_vm._v("Scanner")]
-      )
-    ]),
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "inputMail" } }, [
+          _vm._v("Email de retour rapport")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mail,
+              expression: "mail"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "mail",
+            id: "inputMail",
+            "aria-describedby": "emailHelp",
+            required: ""
+          },
+          domProps: { value: _vm.mail },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mail = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-info mt-2",
+            attrs: { type: "submit" },
+            on: { click: _vm.checkUrl }
+          },
+          [_vm._v("Scanner")]
+        ),
+        _vm._v(" "),
+        _c("transition", { attrs: { name: "rotate" } }, [
+          _vm.show
+            ? _c("img", { staticClass: "m-3", attrs: { src: _vm.image } })
+            : _vm._e()
+        ])
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "table",
@@ -54837,14 +54893,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/components/HomeComponent.vue ***!
   \***************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HomeComponent_vue_vue_type_template_id_782dcf83___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=template&id=782dcf83& */ "./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&");
 /* harmony import */ var _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -54874,7 +54931,7 @@ component.options.__file = "resources/js/components/HomeComponent.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/HomeComponent.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
