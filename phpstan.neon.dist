@@ -1,6 +1,14 @@
 parameters:
+<<<<<<< HEAD
     level: 8
     paths:
         - storage/app/public/files
     fileExtensions:
         - php
+=======
+	level: 8
+	paths:
+		- storage/app/public/files/
+	fileExtensions:
+		- php
+>>>>>>> origin/Alex
