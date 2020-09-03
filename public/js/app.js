@@ -2064,6 +2064,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -39226,17 +39235,33 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c(
-      "ul",
-      { staticClass: "list-group" },
-      _vm._l(_vm.info, function(i) {
-        return _c("li", { key: i.id, staticClass: "list-group-item" }, [
-          _vm._v("\n            Nom du fichier : "),
-          _c("b", [_vm._v(_vm._s(i.name))]),
-          _vm._v(" Chemin : "),
-          _c("b", [_vm._v(_vm._s(i.path))])
-        ])
-      }),
-      0
+      "table",
+      { staticClass: "table table-hover" },
+      [
+        _vm.info
+          ? _c("thead", { staticClass: "thead-dark" }, [
+              _c("tr", [
+                _c("th", [
+                  _vm._v("Nombre de fichiers : " + _vm._s(_vm.info.length))
+                ])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._l(_vm.info, function(i) {
+          return _c("tbody", { key: i.id }, [
+            _c("tr", { staticClass: "bg-primary" }, [
+              _c("td", [
+                _vm._v("Nom du fichier : "),
+                _c("b", [_vm._v(_vm._s(i.name))]),
+                _vm._v(" Chemin : "),
+                _c("b", [_vm._v(_vm._s(i.path))])
+              ])
+            ])
+          ])
+        })
+      ],
+      2
     )
   ])
 }
