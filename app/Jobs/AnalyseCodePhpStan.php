@@ -7,10 +7,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Mail\EmailForQueuing;
-use Mail;
 
-class SendEmail implements ShouldQueue
+class AnalyseCodePhpStan implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -21,7 +19,7 @@ class SendEmail implements ShouldQueue
      */
     public function __construct()
     {
-        // $this->details = $details;
+        //
     }
 
     /**
@@ -31,7 +29,7 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-      $email = new EmailForQueuing();
-     Mail::to('info@checkyourphp.com')->send($email);
+      $analyser2 = shell_exec('cd /var/www/html/laravelSess/intersession-2020-1-flanders && vendor/bin/phpstan analyse > ./storage/app/public/mail/email2.txt');
+      return $analyser2;
     }
 }

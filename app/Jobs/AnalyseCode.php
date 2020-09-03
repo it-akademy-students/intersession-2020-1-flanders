@@ -29,6 +29,7 @@ class AnalyseCode implements ShouldQueue
      */
     public function handle()
     {
+
       $analyser = shell_exec('~/.composer/vendor/bin/psecio-parse scan ./storage/app/public/files/ > ./resources/views/mails/email.blade.php');
       return $analyser;
     }

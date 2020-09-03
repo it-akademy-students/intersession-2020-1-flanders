@@ -26,8 +26,8 @@ foreach( $request->params as $key => $file) {
           $path = $file['path'];
 
           $client = new \GuzzleHttp\Client();
-$credentials = base64_encode("winterhaze69:".env('GIT_PASS')."");
-$return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
+          $credentials = base64_encode("winterhaze69:".env('GIT_PASS')."");
+          $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/contents/'.$path.'',
         [
             'headers' => [
                 'Authorization' => 'Basic ' . $credentials,
@@ -42,7 +42,7 @@ $return = $client->get('https://api.github.com/repos/'.$owner.'/'.$realRepo.'/co
 
       app('App\Http\Controllers\JobController')->enqueue();
 
-      return $request->params;
+      // return $request->params;
     }
 
 

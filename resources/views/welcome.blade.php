@@ -12,6 +12,12 @@
 <div id="app">
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a class="navbar-brand" href="#">
+    <img src="{{ asset('/images/hibou.png') }}" width="30" height="30" alt="" loading="lazy">
+  </a>
+
         <router-link to="/" class="navbar-brand">Check Your PHP</router-link>
         {{-- <a class="navbar-brand" href="#">Check Your PHP</a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/example" class="nav-link">Example</router-link>
+                    <router-link to="/GetStarted" class="nav-link">Aide</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/dons" class="nav-link">Dons</router-link>
+                    <router-link to="/Donations" class="nav-link">Faire un don</router-link>
                 </li>
             </ul>
         </div>
