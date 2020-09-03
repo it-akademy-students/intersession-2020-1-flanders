@@ -33,7 +33,12 @@ class EmailForQueuing extends Mailable
       // $popo = file_get_contents($files);
       // dd($popo);
       return $this->view('mails.email')
+<<<<<<< HEAD
       ->attach("".storage_path('/app/public/mail/email2.txt')."")
       ->attach("".storage_path('/app/public/mail/Conseils_Prevention.docx')."");
+=======
+      ->attach("".storage_path('/app/public/mail/email2.txt')."");
+      //->attach("".storage_path('/app/public/mail/Attacks.docx')."");
+>>>>>>> f884fb3b2862b78174020983f5d2fbd88e66cf6f
     }
 }

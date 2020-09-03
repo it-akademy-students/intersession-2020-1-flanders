@@ -1,17 +1,40 @@
 <template>
     <div>
-        <h1>Composant Home</h1>
+
+
+        <h1>Analyse des fichiers PHP d'un projet github</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
-            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url">
-            <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
-            <button type="submit" class="btn btn-primary mt-2" @click="checkUrl">Scanner</button>
+            <input type="url" id="inputGitHubUrl" class="form-control" v-model="url" placeholder="Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner" required>
+            <label for="inputMail">Email de retour rapport</label>
+            <input type="email" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
+
+            <!-- animated button -->
+
+
+            <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
+                <transition name='rotate'>
+                    <img 
+                        :src='image'
+                        v-if='show'
+                        class="m-3"
+                    > 
+                </transition>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item" v-for="i in info" :key="i.id">
-                Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b>
-            </li>
-        </ul>
+
+
+        <table class="table table-hover">
+            <thead class="thead-dark" v-if="info">
+                <tr>
+                    <th>Nombre de fichiers : {{info.length}}</th>
+                </tr>
+            </thead>
+            <tbody v-for="i in info" :key="i.id">
+                <tr class="bg-white">
+                    <td>Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -21,12 +44,19 @@
     data() {
         return {
             url: '',
-            info: null
+            mail: '',
+            info: null,
+            image: '/images/hibou.png',
+            show: true,
         }
     },
 
     methods: {
         checkUrl() {
+            this.show = false;
+
+
+
             let url = this.url;
             let tabExtension = url.slice(19).split('.');
             if(tabExtension[tabExtension.length-1] == "git"){
@@ -37,17 +67,22 @@
             console.log(url3);
             axios.get(`${url3}`)
             .then(response => {
+                console.log(response);
                 this.info = response.data.items;
-                axios.post('/processFiles', 
-                { 
-                    params : this.info
+                axios.post('/processFiles',
+                {
+                    params : this.info,
+                    mail : this.mail
                 }).then(response => {
                     console.log(response);
+                    console.log(response.data[7]);
+                    //console.log('test');
                 }).catch(error => {
                     console.log(error);
                 });
             });
-        }
+        },
+
     },
 
         mounted() {

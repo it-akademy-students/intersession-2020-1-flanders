@@ -8,17 +8,27 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
-Vue.use(VueRouter);
+import LoadScript from 'vue-plugin-load-script';
+Vue.use(VueRouter, LoadScript);
+
 
 import Home from './components/HomeComponent.vue';
-import Example from './components/ExampleComponent.vue';
+import GetStarted from './components/GetStartedComponent.vue';
+import Donations from './components/DonationsComponent.vue';
+import FileView from './components/FileViewComponent.vue';
+
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/example', component: Example }
+    { path: '/GetStarted', component: GetStarted },
+    { path: '/Donations', component: Donations },
+    { path: '/File', component: FileView }
 ];
 
-const router = new VueRouter({routes});
+const router = new VueRouter({
+    mode:'hash',
+    routes
+    });
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
