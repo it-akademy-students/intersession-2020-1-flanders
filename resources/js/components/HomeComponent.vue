@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody v-for="i in info" :key="i.id">
-                <tr class="bg-primary">
+                <tr class="bg-white">
                     <td>Nom du fichier : <b>{{i.name}}</b> Chemin : <b>{{i.path}}</b></td>
                 </tr>
             </tbody>

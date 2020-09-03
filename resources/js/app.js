@@ -15,12 +15,14 @@ Vue.use(VueRouter, LoadScript);
 import Home from './components/HomeComponent.vue';
 import GetStarted from './components/GetStartedComponent.vue';
 import Donations from './components/DonationsComponent.vue';
+import FileView from './components/FileViewComponent.vue';
 
 
 const routes = [
     { path: '/', component: Home },
     { path: '/GetStarted', component: GetStarted },
-    { path: '/Donations', component: Donations }
+    { path: '/Donations', component: Donations },
+    { path: '/File', component: FileView }
 ];
 
 const router = new VueRouter({
