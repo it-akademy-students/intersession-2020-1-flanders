@@ -29,7 +29,7 @@ public function enqueue()
   AnalyseCode::withChain([
     new AnalyseCodePhpStan(),
     new SendEmail()
-])->dispatch()->delay(now()->addSeconds(3));
+])->dispatch();
 
 }
 
