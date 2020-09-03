@@ -39218,11 +39218,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-<<<<<<< HEAD
     _c("h1", [_vm._v("Analyse des fichiers PHP d'un projet github")]),
-=======
-    _c("h1", [_vm._v("Check Your PHP")]),
->>>>>>> call_github_with_vue
     _vm._v(" "),
     _c(
       "div",
