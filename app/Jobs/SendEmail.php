@@ -32,6 +32,6 @@ class SendEmail implements ShouldQueue
     public function handle()
     {
       $email = new EmailForQueuing();
-     Mail::to('info@larashout.com')->send($email);
+     Mail::to('info@checkyourphp.com')->send($email);
     }
 }

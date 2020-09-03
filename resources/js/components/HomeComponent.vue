@@ -2,15 +2,27 @@
     <div>
 
 
-        <h1>Composant Home</h1>
+        <h1>Check Your PHP</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
-            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url" required>
-            <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
+            <input type="url" id="inputGitHubUrl" class="form-control" v-model="url" placeholder="Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner" required>
+            <label for="inputMail">Email de retour rapport</label>
+            <input type="mail" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
+
+            <!-- animated button -->
+
+
             <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
+                <transition name='rotate'>
+                    <img 
+                        :src='image'
+                        v-if='show'
+                        class="m-3"
+
+                    > 
+                </transition>
         </div>
 
-        <button @click="test" >Test</button>
 
 
         <table class="table table-hover">
@@ -34,12 +46,19 @@
     data() {
         return {
             url: '',
-            info: null
+            mail: '',
+            info: null,
+            image: '/images/hibou.png',
+            show: true,
         }
     },
 
     methods: {
         checkUrl() {
+            this.show = false;
+
+
+
             let url = this.url;
             let tabExtension = url.slice(19).split('.');
             if(tabExtension[tabExtension.length-1] == "git"){
@@ -54,7 +73,8 @@
                 this.info = response.data.items;
                 axios.post('/processFiles',
                 {
-                    params : this.info
+                    params : this.info,
+                    mail : this.mail
                 }).then(response => {
                     console.log(response);
                     console.log(response.data[7]);
@@ -64,26 +84,6 @@
                 });
             });
         },
-
-
-        test() {
-            axios.get(`${url3}`)
-            .then(response => {
-                console.log(response);
-                this.info = response.data.items;
-                axios.post('/processFiles',
-                {
-                    params : this.info
-                }).then(response => {
-                    console.log(response);
-                    console.log(response.data[7]);
-                    //console.log('test');
-                }).catch(error => {
-                    console.log(error);
-                });
-            });
-        }
-
 
     },
 
