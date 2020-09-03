@@ -1,12 +1,21 @@
 <template>
     <div>
+
+
         <h1>Composant Home</h1>
         <div class="form-group">
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
-            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url">
+            <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url" required>
             <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
-            <button type="submit" class="btn btn-primary mt-2" @click="checkUrl">Scanner</button>
+            <div class="vld-parent">
+                <loading :active.sync="isLoading"
+                         :can-cancel="true"
+                         :on-cancel="onCancel"
+                         :is-full-page="false"></loading>
+            <button type="submit" class="btn btn-info mt-2" @click="checkUrl" @click.prevent="doAjax">Scanner</button>
+            </div>
         </div>
+
 
         <table class="table table-hover">
             <thead class="thead-dark" v-if="info">
@@ -25,15 +34,21 @@
 </template>
 
 <script>
+    import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
     export default {
 
     data() {
         return {
+            isLoading: false,
             url: '',
             info: null
         }
     },
-
+        components: {
+            Loading
+        },
     methods: {
         checkUrl() {
             let url = this.url;
@@ -46,6 +61,31 @@
             console.log(url3);
             axios.get(`${url3}`)
             .then(response => {
+                console.log(response);
+                this.info = response.data.items;
+                axios.post('/processFiles',
+                {
+                    params : this.info
+                }).then(response => {
+                    console.log(response);
+                    console.log(response.data[7]);
+                    //console.log('test');
+                }).catch(error => {
+                    console.log(error);
+                });
+            });
+        },
+        doAjax() {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+                this.isLoading = false
+            },5000)
+        },
+        test() {
+            axios.get(`${url3}`)
+            .then(response => {
+                console.log(response);
                 this.info = response.data.items;
                 axios.post('/processFiles',
                 {
@@ -59,6 +99,8 @@
                 });
             });
         }
+
+
     },
 
         mounted() {
@@ -66,3 +108,10 @@
         }
     }
 </script>
+
+<style>
+    .vld-parent {
+        height: 20vh;
+        margin: 0;
+    }
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-center position-ref full-height">
+    <div class="container">
 
         <div class="content">
             <h1>" Le don vient du coeur, non de la fortune." - Proverbe Kurde</h1>
@@ -10,6 +10,10 @@
 </template>
 
 <script>
+
+
+
+
     export default {
         data() {
             return {
