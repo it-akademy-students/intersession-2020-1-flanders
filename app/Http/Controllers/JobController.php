@@ -23,7 +23,7 @@ class JobController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
-    public function enqueue(Request $request)
+    public function enqueue()
     {
 
     AnalyseCode::withChain([
