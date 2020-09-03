@@ -7,8 +7,15 @@
             <label for="inputGitHubUrl">Lien du repo GitHub</label>
             <input type="url" id="inputGitHubUrl" class="form-control" aria-describedby="HelpBlock" v-model="url" required>
             <small id="HelpBlock" class="form-text text-muted">Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner</small>
-            <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
+            <div class="vld-parent">
+                <loading :active.sync="isLoading"
+                         :can-cancel="true"
+                         :on-cancel="onCancel"
+                         :is-full-page="false"></loading>
+            <button type="submit" class="btn btn-info mt-2" @click="checkUrl" @click.prevent="doAjax">Scanner</button>
+            </div>
         </div>
+
 
 
         <table class="table table-hover">
@@ -27,15 +34,21 @@
 </template>
 
 <script>
+    import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
     export default {
 
     data() {
         return {
+            isLoading: false,
             url: '',
             info: null
         }
     },
-
+        components: {
+            Loading
+        },
     methods: {
         checkUrl() {
             let url = this.url;
@@ -62,8 +75,13 @@
                 });
             });
         },
-
-
+        doAjax() {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+                this.isLoading = false
+            },5000)
+        },
         test() {
             axios.get(`${url3}`)
             .then(response => {
@@ -90,3 +108,10 @@
         }
     }
 </script>
+
+<style>
+    .vld-parent {
+        height: 20vh;
+        margin: 0;
+    }
+</style>
