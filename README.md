@@ -1,3 +1,27 @@
+     
+
+Quick Start
+
+# Add virtual host if using Apache
+
+# requirements adviced
+PHP-7.3 NodeJS-12 MySQL-5
+
+# Install Dependencies Laravel
+composer install
+
+# If you get an error about an encryption key
+php artisan key:generate
+
+# Install JS Dependencies
+npm install
+
+# Watch Files (compilation)
+npm run watch
+
+
+
+
 [![Work in Repl.it](https://classroom.github.com/assets/work-in-replit-14baed9a392b3a25080506f3b7b6d57f295ec2978f6f33ec97e36a161684cbe9.svg)](https://classroom.github.com/online_ide?assignment_repo_id=274956&assignment_repo_type=GroupAssignmentRepo)
 <a href="https://www.it-akademy.fr/">
     <img src="https://www.it-akademy.fr/img/logo.png" alt="IT-Akademy logo" title="IT-Akademy" align="right" height="60" />
@@ -39,7 +63,7 @@ La sécurité des développements est un sujet complexe. Il est difficile d’im
 
 Le principe est simple : un utilisateur indique l’adresse du dépôt GitHub (public) de son projet écrit en PHP dans un champ de formulaire et l’application génère un rapport après avoir analysé le code de ce projet.
 
-Si le principe est simple, l’implémentation reste complexe et demande une architecture et une infrastructure bien conçues. C’est tout l’objet de ce défi. Parmi les différents besoins et contraintes technologiques que vous identifierez, nous faisons le choix d’imposer certains mécanismes et briques technologiques : 
+Si le principe est simple, l’implémentation reste complexe et demande une architecture et une infrastructure bien conçues. C’est tout l’objet de ce défi. Parmi les différents besoins etrequirements adviced contraintes technologiques que vous identifierez, nous faisons le choix d’imposer certains mécanismes et briques technologiques : 
 
     - Un front développé avec Vue 
     - Un backend en PHP de type API développé avec Laravel
