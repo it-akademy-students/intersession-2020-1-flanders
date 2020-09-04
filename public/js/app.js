@@ -2177,7 +2177,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -2194,22 +2193,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      url: null,
-      mail: null,
-=======
+//
  // Import stylesheet
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      url: null,
+      mail: null,
       isLoading: false,
-      url: '',
-      mail: '',
->>>>>>> Dev
       info: null,
       show: true
     };
@@ -6752,11 +6745,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n", ""]);
-=======
 exports.push([module.i, "\n.vld-parent {\n    height: 20vh;\n    margin: 0;\n}\n", ""]);
->>>>>>> Dev
 
 // exports
 
@@ -39487,140 +39476,111 @@ var render = function() {
   return _c("div", [
     _c("h1", [_vm._v("Analyse des fichiers PHP d'un projet github")]),
     _vm._v(" "),
-    _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "inputGitHubUrl" } }, [
-        _vm._v("Lien du repo GitHub")
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.url,
-            expression: "url"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: {
-          type: "url",
-          id: "inputGitHubUrl",
-          placeholder:
-            "Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner",
-          required: ""
-        },
-        domProps: { value: _vm.url },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    _c(
+      "div",
+      { staticClass: "form-group" },
+      [
+        _c("label", { attrs: { for: "inputGitHubUrl" } }, [
+          _vm._v("Lien du repo GitHub")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.url,
+              expression: "url"
             }
-            _vm.url = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "inputMail" } }, [
-        _vm._v("Email de retour rapport")
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.mail,
-            expression: "mail"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: {
-          type: "email",
-          id: "inputMail",
-          "aria-describedby": "emailHelp",
-          required: ""
-        },
-        domProps: { value: _vm.mail },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.mail = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vld-parent" },
-        [
-          _c("loading", {
-            attrs: { active: _vm.isLoading, "is-full-page": false },
-            on: {
-              "update:active": function($event) {
-                _vm.isLoading = $event
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "url",
+            id: "inputGitHubUrl",
+            placeholder:
+              "Veuillez insérer le lien vers le repo GitHub contenant des fichiers PHP à scanner",
+            required: ""
+          },
+          domProps: { value: _vm.url },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
               }
+              _vm.url = $event.target.value
             }
-<<<<<<< HEAD
           }
         }),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-info mt-2",
-            attrs: { type: "submit" },
-            on: { click: _vm.checkUrl }
-          },
-          [_vm._v("Scanner")]
-        ),
+        _c("label", { attrs: { for: "inputMail" } }, [
+          _vm._v("Email de retour rapport")
+        ]),
         _vm._v(" "),
-        _c(
-          "transition",
-          {
-            attrs: {
-              name: "custom-classes-transition",
-              "enter-active-class": "animated tada",
-              "leave-active-class": "animated bounceOutRight"
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mail,
+              expression: "mail"
             }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "email",
+            id: "inputMail",
+            "aria-describedby": "emailHelp",
+            required: ""
           },
-          [
-            _vm.show
-              ? _c("img", { staticClass: "m-3", attrs: { src: _vm.image } })
-              : _vm._e()
-          ]
-        ),
+          domProps: { value: _vm.mail },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.mail = $event.target.value
+            }
+          }
+        }),
         _vm._v(" "),
-        _c("transition", { attrs: { name: "fade" } })
+        _c("transition", { attrs: { name: "fade" } }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "vld-parent" },
+          [
+            _c("loading", {
+              attrs: { active: _vm.isLoading, "is-full-page": false },
+              on: {
+                "update:active": function($event) {
+                  _vm.isLoading = $event
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-info mt-2",
+                attrs: { type: "submit" },
+                on: {
+                  click: [
+                    _vm.checkUrl,
+                    function($event) {
+                      $event.preventDefault()
+                      return _vm.doAjax($event)
+                    }
+                  ]
+                }
+              },
+              [_vm._v("Scanner")]
+            )
+          ],
+          1
+        )
       ],
       1
     ),
-=======
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-info mt-2",
-              attrs: { type: "submit" },
-              on: {
-                click: [
-                  _vm.checkUrl,
-                  function($event) {
-                    $event.preventDefault()
-                    return _vm.doAjax($event)
-                  }
-                ]
-              }
-            },
-            [_vm._v("Scanner")]
-          )
-        ],
-        1
-      )
-    ]),
->>>>>>> Dev
     _vm._v(" "),
     _c(
       "table",

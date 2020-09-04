@@ -10,11 +10,7 @@
             <input type="email" id="inputMail" class="form-control" aria-describedby="emailHelp" v-model="mail" required>
 
             <!-- animated button -->
-
-
-            <button type="submit" class="btn btn-info mt-2" @click="checkUrl">Scanner</button>
-
-            <transition
+            <!-- <transition
                 name="custom-classes-transition"
                 enter-active-class="animated tada"
                 leave-active-class="animated bounceOutRight"
@@ -24,7 +20,7 @@
                     :src='image'
                     class="m-3"
                 > 
-            </transition>
+            </transition> -->
 
             
             <transition name='fade'>
@@ -62,14 +58,9 @@
 
     data() {
         return {
-<<<<<<< HEAD
             url: null,
             mail: null,
-=======
             isLoading: false,
-            url: '',
-            mail: '',
->>>>>>> Dev
             info: null,
             show: true,
 
@@ -123,20 +114,9 @@
 </script>
 
 <style>
-<<<<<<< HEAD
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-</style>
-=======
     .vld-parent {
         height: 20vh;
         margin: 0;
     }
 </style>
->>>>>>> Dev
