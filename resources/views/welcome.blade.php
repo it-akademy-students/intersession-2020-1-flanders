@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="styles<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>heet" href="{{ asset('css/bootstrap.css') }}">
 
 </head>
 <body>
@@ -26,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/GetStarted" class="nav-link">Aide</router-link>
+                    <router-link to="/GetStarted" class="nav-link"><i class="fad fa-question-circle"></i> Aide</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/Donations" class="nav-link">Faire un don</router-link>
+                    <router-link to="/Donations" class="nav-link"><i class="fas fa-money-check-alt"></i> Faire un don</router-link>
                 </li>
             </ul>
         </div>
