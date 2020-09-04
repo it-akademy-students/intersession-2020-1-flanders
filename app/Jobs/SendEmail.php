@@ -9,7 +9,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\EmailForQueuing;
 use Mail;
-
+use App\Http\Controllers\ProcessFilesController;
+use Session;
+use Storage;
 class SendEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -31,7 +33,11 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
+        $mailCredentials =  Storage::disk('public')->get('mail/mailCredential.txt');
+        // $mail = $mailCredentials->getContent();
         $email = new EmailForQueuing();
-        Mail::to('info@checkyourphp.com')->send($email);
+        Mail::to(''.$mailCredentials.'')->send($email);
+        $analyser = shell_exec('rm -rf '.base_path('storage/app/public/files').'');
+        Storage::disk('public')->delete('mail/mailCredential.txt');
     }
 }
