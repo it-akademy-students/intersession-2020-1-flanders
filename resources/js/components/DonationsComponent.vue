@@ -69,6 +69,10 @@
         margin-top: 100px;
         text-align: center;
     }
+    
+    h1 {
+    padding-bottom: 20vh;
+    }
 </style>
 
 
